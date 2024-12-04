@@ -12,6 +12,11 @@ export class KidsController {
     return this.KidsService.findAll();
   }
 
+  @Get(':id')
+  findOne(@Param('id') id: number) {
+  return this.KidsService.findOne(+id);
+}
+
   @Post()
   create(@Body() createKidDto: CreateKidDto) {
     return this.KidsService.create(createKidDto);
